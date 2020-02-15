@@ -10,7 +10,7 @@ source:
   sha256: fad03d2f4b0d786df5df22cb374191813176f767644eb63bdbb692520770d7d4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -21,7 +21,7 @@ requirements:
     - setuptools_scm
   run:
     - python
-    - matplotlib
+    - matplotlib-base
     - numpy
     - scipy
 

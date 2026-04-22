@@ -6,26 +6,30 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fad03d2f4b0d786df5df22cb374191813176f767644eb63bdbb692520770d7d4
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools_scm
+    - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - matplotlib-base
     - numpy
     - scipy
+    - setuptools
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - mcerp
 

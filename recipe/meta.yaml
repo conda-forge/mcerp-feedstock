@@ -1,16 +1,16 @@
 {% set name = "mcerp" %}
-{% set version = "0.12" %}
+{% set version = "1.0.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fad03d2f4b0d786df5df22cb374191813176f767644eb63bdbb692520770d7d4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 468695d35762a2705ec50ff9593b89e85ab1a29b511458ed67ca4c0fb56d33ad
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
